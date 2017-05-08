@@ -9,13 +9,17 @@ public abstract class Giocatore {
 	}
 	public boolean addTentativo(String guess, int bulls, int maggots){
 		if(Giudice.valida(guess)==true){
-			tentativi.add(Tentativo(guess, bulls, maggots));
+			tentativi.add(new Tentativo(guess, bulls, maggots));
 			return true;
 		}
 		else return false;
 	}
 	public String stringaTentativi(){
-		
+		String string = new String();
+		for(Tentativo t: tentativi){
+			string.concat(t.toString());
+		}
+		return string;
 	}
 	public void init(){
 		target=genTarget();
