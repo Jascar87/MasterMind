@@ -4,16 +4,18 @@ public class Giudice {
 	final static char [] CHARS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 	public String target = new String(genTarget());
 	
-	public String genTarget(){
-		int[] array = new int[LUNGHEZZA];
-		while(valida(array.toString())==false){
-			for(int i=0; i<LUNGHEZZA; i++){
-				array[i] = (int) (Math.random()*10);
-			}
+	public static String genTarget() {
+		String target = "";
+		for (int i=0; i<LUNGHEZZA; i++) {
+            char c;
+            do {
+                c = CHARS[(int)(Math.random()*CHARS.length)];
+            } while (target.indexOf(c) >= 0);
+            target += c;
 		}
-		System.out.println(array.toString());
-		return array.toString();
+		return target;
 	}
+
 	
 	public static boolean valida(String string) {
 		int stop = 0;

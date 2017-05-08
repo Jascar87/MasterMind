@@ -43,9 +43,11 @@ public class MasterMindTest {
 		assertTrue(Giudice.numMaggots("1234",	"2345")==3);
 	}
 	
-	/*@Test
+	@Test
 	public void testValidaTarget(){
 		Giudice giudice = new Giudice();
 		assertTrue(Giudice.valida(giudice.target));
-	}*/
+	}
+	
+	
 }
