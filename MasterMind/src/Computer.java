@@ -1,6 +1,10 @@
 
 public class Computer extends Giocatore{
 
+	public Computer(){
+		init();
+	}
+	
 	@Override
 	public String genGuess() {
 		return genTarget();

@@ -8,7 +8,7 @@ public abstract class Giocatore {
 		return target;
 	}
 	public boolean addTentativo(String guess, int bulls, int maggots){
-		if(Giudice.valida(guess)==true){
+		if(Giudice.valida(guess) && (bulls+maggots)<Giudice.LUNGHEZZA){
 			tentativi.add(new Tentativo(guess, bulls, maggots));
 			return true;
 		}
